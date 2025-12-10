@@ -1,78 +1,79 @@
-AI Life Coach — FastAPI · OpenAI · Docker · Nginx · HTTPS
+# **AI Life Coach — README**
 
-Your personal AI coach — built with a modern, production-ready stack.
-This project combines a containerised backend, a dynamic front-end, and secure deployment to deliver an interactive AI coaching experience through the browser.
+## **Overview**
 
-🚀 Overview
-This project is an AI-powered life coach accessible through a dynamic web interface.
-It uses a FastAPI backend running OpenAI models, communicates with a JavaScript front-end through REST API calls, and is fully containerised and deployed with HTTPS support via Nginx.
-Everything is structured for real-world deployment: clean architecture, scalable containers, and secure traffic handling.
+AI Life Coach is a full-stack, containerised AI coaching system designed to deliver fast, personalised guidance through a secure web interface.
 
-✨ Features
-AI Coach Logic (Python + OpenAI)
-Uses the OpenAI API to generate personalised coaching responses.
-FastAPI Backend
-A lightweight, high-performance API that exposes endpoints for the AI model.
-Dynamic Web App (JavaScript)
-The client sends API requests to the FastAPI server and renders responses in real time.
-Dockerized Deployment
-The entire backend is packaged in a Docker container for portability and reproducibility.
-Nginx Reverse Proxy
-Handles routing and improves security, performance, and scalability.
-HTTPS Enabled
-Secure communication using SSL certificates (production-ready deployment flow).
+The project combines Python, FastAPI, Docker, Nginx, and JavaScript to create a seamless pipeline between a user, a web client, and an intelligent backend powered by the OpenAI API.
 
-🧱 Tech Stack
-Backend
-Python
-FastAPI
-OpenAI Python SDK
-Docker
-Nginx
-HTTPS (Certbot / SSL)
+## **Features**
 
-Frontend
-HTML
-CSS
-JavaScript (fetch API calls to backend routes)
+- **AI-Powered Coaching**
+    
+    Uses Python + OpenAI to generate dynamic, personalised responses.
+    
+- **FastAPI Backend**
+    
+    Lightweight, high-performance API serving all AI requests.
+    
+- **Dynamic Frontend**
+    
+    JavaScript-driven UI making asynchronous API calls to the FastAPI server.
+    
+- **Secure Deployment**
+    
+    Nginx reverse proxy + HTTPS enabled for encrypted communication.
+    
+- **Dockerized Architecture**
+    
+    Fully containerised backend for portability, scalability, and simple deployment.
+    
+- **Clean API Routing**
+    
+    FastAPI endpoints handle message passing, session logic, and OpenAI integration.
+    
 
-📡 Architecture
-Frontend (HTML/JS)
-       ↓  API Calls
-Nginx Reverse Proxy
-       ↓
-FastAPI Server (Python)
-       ↓
-OpenAI API (AI Coaching Logic)
+## **Tech Stack**
+
+- **Backend:** Python, FastAPI
+- **AI Engine:** OpenAI API
+- **Frontend:** HTML, CSS, JavaScript (Fetch API)
+- **DevOps:** Docker, Nginx, HTTPS
+- **Hosting:** (Add your server provider if you want)
 
 
-The backend runs inside Docker, and Nginx sits in front as a secure reverse proxy that terminates HTTPS and forwards traffic to the FastAPI application.
+## **How It Works**
 
-⚙️ Running Locally
-docker-compose up --build
-The backend and Nginx proxy will start, and the site will become reachable via your configured domain or localhost.
+1. User enters a message on the website.
+2. JavaScript sends the message to the FastAPI server.
+3. FastAPI forwards it to the OpenAI API.
+4. AI returns a personalised coaching response.
+5. Frontend updates instantly with the reply.
+6. Nginx handles SSL termination + routing to the correct container.
 
-🔐 HTTPS Setup
-Production deployments use Nginx with SSL termination.
-Certificates can be generated using Certbot or your preferred method.
+## **Setup**
 
-📬 API Example
-POST /api/coach
+### **1. Clone the repo**
 
-Request:
-{
-  "message": "I want to improve my discipline."
-}
+```
+git clone https://github.com/<your-username>/<your-repo>.git
+cd <your-repo>
 
+```
 
-Response:
-{
-  "reply": "Here’s a strategy to build consistent discipline..."
-}
+### **2. Add your OpenAI API key**
 
-📌 Goals & Future Improvements
-Add user accounts + session memory
-Support voice interactions
-Add journaling / habit-tracking
-Improve long-term memory using a vector database
-Multi-model support (OpenAI / Anthropic)
+Create `.env`:
+
+```
+OPENAI_API_KEY=your_key_here
+
+```
+
+## **Future Improvements**
+
+- User accounts + personalized sessions
+- Conversation memory
+- Analytics dashboard
+- Mobile-optimised frontend
+- Custom fine-tuned model
